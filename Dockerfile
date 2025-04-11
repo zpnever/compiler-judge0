@@ -122,7 +122,7 @@ RUN set -xe && \
       ./configure \
         --prefix=/usr/local/mono-$VERSION && \
       make -j$(nproc) && \
-      make -j$(proc) install && \
+      make -j$(nproc) install && \
       rm -rf /tmp/*; \
     done
 
