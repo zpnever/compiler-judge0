@@ -1,13 +1,11 @@
-task:
+docker_builder:
   name: Build and Push Docker Image
-  container:
-    image: docker:latest
+
   environment:
     DOCKER_USERNAME: willdan1453
     DOCKER_PASSWORD: JawaBarat123
-  install_script:
-    - apk add --no-cache docker-cli
+
   script:
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - docker build -t yourusername/yourimage:latest .
-    - docker push yourusername/yourimage:latest
+    - docker build -t willdan1453/inacomp-compiler-judge0:latest .
+    - docker push willdan1453/inacomp-compiler-judge0:latest
